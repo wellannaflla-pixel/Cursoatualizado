@@ -3,25 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navegação Segura | Hub de Proteção Digital</title>
+    <title>Navegação Segura | Guia de Proteção Digital</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --primary-bg: #0f172a;    /* Azul Marinho Profundo */
-            --accent-blue: #3b82f6;   /* Azul Royal para links/botões */
-            --danger-soft: #fef2f2;   /* Fundo para alertas */
-            --text-main: #334155;
+            --primary: #0f172a;    /* Navy Dark */
+            --accent: #3b82f6;     /* Blue */
+            --danger: #ef4444;     /* Red */
+            --light-bg: #f8fafc;
         }
 
         body { 
             font-family: 'Inter', sans-serif; 
-            color: var(--text-main);
-            background-color: #f8fafc;
-            scroll-behavior: smooth;
+            background-color: var(--light-bg);
+            color: #334155;
         }
 
         /* Navbar Custom */
@@ -31,79 +30,62 @@
             border-bottom: 1px solid #e2e8f0;
         }
 
-        /* Hero Section com Overlay Suave */
+        /* Hero Section Moderna */
         .hero-section { 
-            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), 
-                        url('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1350&q=80'); 
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(135deg, var(--primary) 0%, #1e293b 100%);
             color: white; 
-            padding: 160px 0 100px;
+            padding: 140px 0 80px;
+            margin-bottom: 3rem;
         }
 
-        /* Cards Estilo Moderno */
+        /* Cards com efeito Hover */
         .card-danger { 
             border: none;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            background: white;
+            border-top: 4px solid var(--danger); 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .card-danger:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.08) !important;
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
         }
 
-        .icon-circle {
-            width: 50px;
-            height: 50px;
-            background: var(--danger-soft);
-            color: #ef4444;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
+        .icon-box {
+            font-size: 2rem;
+            color: var(--danger);
+            margin-bottom: 1rem;
         }
 
-        /* Seção de Denúncia */
-        .alert-panel {
+        /* Seção de Ajuda */
+        .cta-section {
             background: #fff;
-            border: 1px solid #fee2e2;
-            border-left: 6px solid #ef4444;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
         }
 
         .footer { 
-            background: var(--primary-bg); 
+            background: var(--primary); 
             color: #94a3b8; 
-            padding: 50px 0; 
+            padding: 60px 0; 
         }
 
-        .btn-primary-custom {
-            background-color: var(--accent-blue);
-            color: white;
-            border: none;
-            padding: 10px 24px;
-            font-weight: 600;
-        }
+        .btn-primary { background-color: var(--accent); border: none; }
+        .btn-primary:hover { background-color: #2563eb; }
     </style>
 </head>
 <body>
 
     <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold text-dark" href="#">
-                <i class="bi bi-shield-lock-fill text-primary"></i> Navegação Segura
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <a class="navbar-brand fw-bold text-primary" href="#"><i class="bi bi-shield-check-fill me-2"></i>Navegação Segura</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navMenu">
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#riscos">Riscos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#pais">Guia Familiar</a></li>
-                    <li class="nav-item ms-lg-3"><a class="btn btn-danger btn-sm px-4" href="#denuncia">Denunciar Agora</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#perigos">Perigos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#guia-pais">Guia para Pais</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-danger text-white ms-lg-3 px-4" href="#denunciar">Denunciar</a></li>
                 </ul>
             </div>
         </div>
@@ -111,115 +93,122 @@
 
     <header class="hero-section text-center">
         <div class="container">
-            <span class="badge bg-primary mb-3 px-3 py-2">Educação Digital 2026</span>
-            <h1 class="display-3 fw-bold mb-3">Sua Segurança é <br><span class="text-info">Inegociável.</span></h1>
-            <p class="lead mb-5 opacity-75">Um guia completo para entender riscos, proteger sua família e agir contra crimes virtuais.</p>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="#riscos" class="btn btn-light btn-lg px-4">Explorar Riscos</a>
-                <a href="#denuncia" class="btn btn-outline-light btn-lg px-4">Obter Ajuda</a>
+            <span class="badge rounded-pill bg-danger mb-3 px-3 py-2">Conscientização Digital 2026</span>
+            <h1 class="display-3 fw-extrabold mb-4">Sua Segurança Online <br><span class="text-info">é nossa prioridade.</span></h1>
+            <p class="lead opacity-75 mb-5">Proteja seus dados, sua família e aprenda a identificar ameaças no mundo digital.</p>
+            <div class="d-grid gap-2 d-md-block">
+                <a href="#perigos" class="btn btn-light btn-lg px-5 me-md-2">Começar Agora</a>
+                <a href="#denunciar" class="btn btn-outline-light btn-lg px-5">Canais de Ajuda</a>
             </div>
         </div>
     </header>
 
-    <main class="container my-5">
+    <main class="container">
         
-        <section id="riscos" class="py-5">
+        <section id="perigos" class="mb-5 pb-5">
             <div class="text-center mb-5">
-                <h2 class="fw-bold">⚠️ Conheça os Perigos</h2>
-                <div class="mx-auto bg-primary" style="height: 3px; width: 60px;"></div>
+                <h2 class="fw-bold">⚠️ Ameaças Comuns</h2>
+                <p class="text-muted">Conhecer o risco é o primeiro passo para a prevenção.</p>
             </div>
+            
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="card h-100 card-danger shadow-sm p-3">
                         <div class="card-body">
-                            <div class="icon-circle"><i class="bi bi-people-fill"></i></div>
+                            <div class="icon-box"><i class="bi bi-chat-dots"></i></div>
                             <h5 class="fw-bold">Cyberbullying</h5>
-                            <p class="small text-muted">Ações de intimidação e humilhação digital. Identificar cedo é a chave para proteger a saúde mental.</p>
+                            <p class="text-muted">Assédio e humilhação digital. Impacta seriamente a saúde mental de jovens e adultos.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card h-100 card-danger shadow-sm p-3">
                         <div class="card-body">
-                            <div class="icon-circle"><i class="bi bi-bank2"></i></div>
-                            <h5 class="fw-bold">Fraudes e Golpes</h5>
-                            <p class="small text-muted">Sites falsos e engenharia social (Phishing) focados em roubo de senhas e transações via Pix.</p>
+                            <div class="icon-box"><i class="bi bi-credit-card-2-front"></i></div>
+                            <h5 class="fw-bold">Golpes Financeiros</h5>
+                            <p class="text-muted">Engenharia social, sites falsos e o crescente "Golpe do Pix" que visam roubar seu patrimônio.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card h-100 card-danger shadow-sm p-3">
                         <div class="card-body">
-                            <div class="icon-circle"><i class="bi bi-fingerprint"></i></div>
-                            <h5 class="fw-bold">Privacidade Exposta</h5>
-                            <p class="small text-muted">A superexposição de rotinas e dados pessoais facilita o rastreio por criminosos no mundo real.</p>
+                            <div class="icon-box"><i class="bi bi-eye-slash"></i></div>
+                            <h5 class="fw-bold">Exposição de Dados</h5>
+                            <p class="text-muted">Vazamento de informações sensíveis que podem ser usadas para roubo de identidade.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="pais" class="row align-items-center py-5 my-5 border-top border-bottom">
-            <div class="col-lg-6 pe-lg-5">
-                <h2 class="fw-bold text-primary mb-4">👨‍👩‍👧‍👦 Guia para Responsáveis</h2>
-                <p>O ambiente digital exige a mesma supervisão que o mundo físico. Tecnologia aliada ao diálogo é o melhor caminho.</p>
-                <div class="mt-4">
-                    <div class="d-flex align-items-start mb-3">
-                        <i class="bi bi-check2-circle text-success me-3 fs-4"></i>
-                        <p class="mb-0"><strong>Controle Ativo:</strong> Utilize ferramentas de monitoramento mas priorize a confiança.</p>
-                    </div>
-                    <div class="d-flex align-items-start mb-3">
-                        <i class="bi bi-check2-circle text-success me-3 fs-4"></i>
-                        <p class="mb-0"><strong>Configurações:</strong> Mantenha perfis de menores sempre em modo privado.</p>
-                    </div>
+        <section id="guia-pais" class="row align-items-center mb-5 py-5 bg-white rounded-4 shadow-sm mx-1">
+            <div class="col-lg-6 px-lg-5">
+                <h2 class="text-primary fw-bold mb-4">👨‍👩‍👧‍👦 Guia para Pais e Responsáveis</h2>
+                <p class="mb-4">O acompanhamento ativo é a ferramenta mais poderosa contra crimes digitais envolvendo menores.</p>
+                
+                <div class="d-flex mb-3">
+                    <i class="bi bi-check-circle-fill text-success me-3 fs-4"></i>
+                    <div><strong>Ferramentas de Controle:</strong> Implemente soluções como Google Family Link.</div>
+                </div>
+                <div class="d-flex mb-3">
+                    <i class="bi bi-check-circle-fill text-success me-3 fs-4"></i>
+                    <div><strong>Presença Digital:</strong> Monitore o tempo de tela e os tipos de apps utilizados.</div>
+                </div>
+                <div class="d-flex mb-4">
+                    <i class="bi bi-check-circle-fill text-success me-3 fs-4"></i>
+                    <div><strong>Educação:</strong> Converse abertamente sobre não falar com estranhos online.</div>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="bg-white p-4 rounded shadow-sm border">
-                    <h5 class="mb-4 fw-bold"><i class="bi bi-tools text-primary me-2"></i>Recursos Indicados</h5>
-                    <div class="list-group list-group-flush">
-                        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                            Google Family Link <span class="badge bg-info rounded-pill">Grátis</span>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                            Kaspersky Safe Kids <span class="badge bg-secondary rounded-pill">Premium</span>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                            Norton Family <span class="badge bg-secondary rounded-pill">Premium</span>
-                        </a>
+            <div class="col-lg-6 mt-4 mt-lg-0 text-center">
+                <div class="p-4 border-start border-4 border-info bg-light mx-lg-4">
+                    <h5 class="fw-bold mb-3">Softwares Recomendados</h5>
+                    <div class="d-grid gap-2">
+                        <a href="#" class="btn btn-outline-dark">Kaspersky Safe Kids</a>
+                        <a href="#" class="btn btn-outline-dark">Google Family Link</a>
+                        <a href="#" class="btn btn-outline-dark">Norton Family</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="denuncia" class="alert-panel p-5 rounded-4 shadow-sm mb-5">
-            <div class="row align-items-center">
-                <div class="col-md-8 text-center text-md-start">
-                    <h2 class="fw-bold mb-2">🚨 Percebeu algo suspeito?</h2>
-                    <p class="mb-0 text-muted">Utilize os canais abaixo para denúncias anônimas e apoio jurídico/psicológico.</p>
+        <section id="denunciar" class="cta-section p-5 mb-5 text-center shadow">
+            <h2 class="fw-bold mb-3">🚨 Precisa de Ajuda ou Quer Denunciar?</h2>
+            <p class="text-muted mb-5">Não se cale. Utilize os canais oficiais para relatar abusos ou crimes virtuais.</p>
+            
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-5">
+                    <div class="p-4 border rounded-3 bg-light">
+                        <h4>SaferNet Brasil</h4>
+                        <p class="small">Denuncie crimes contra os direitos humanos de forma anônima.</p>
+                        <a href="https://new.safernet.org.br/denuncie" target="_blank" class="btn btn-primary px-4">Ir para SaferNet</a>
+                    </div>
                 </div>
-                <div class="col-md-4 text-center mt-4 mt-md-0">
-                    <a href="https://new.safernet.org.br/denuncie" target="_blank" class="btn btn-danger btn-lg w-100 mb-2">SaferNet Brasil</a>
-                    <a href="tel:100" class="btn btn-outline-dark w-100">Disque 100</a>
+                <div class="col-md-5">
+                    <div class="p-4 border rounded-3 bg-light">
+                        <h4>Disque 100</h4>
+                        <p class="small">Violações de direitos de crianças e adolescentes. Canal 24h.</p>
+                        <a href="tel:100" class="btn btn-danger px-4">Ligar Agora (100)</a>
+                    </div>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="footer mt-auto">
+    <footer class="footer mt-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start">
-                    <h5 class="text-white fw-bold">Navegação Segura</h5>
-                    <p class="small">Construindo um futuro digital mais humano e protegido.</p>
+                    <h5 class="text-white fw-bold">Projeto Navegação Segura</h5>
+                    <p>Iniciativa educacional para uma internet mais humana e protegida.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <div class="mb-3">
-                        <a href="#" class="text-white me-3 fs-4"><i class="bi bi-github"></i></a>
-                        <a href="#" class="text-white fs-4"><i class="bi bi-linkedin"></i></a>
+                    <p>&copy; 2026 | Desenvolvido para Portfólio</p>
+                    <div class="fs-4">
+                        <i class="bi bi-github me-2"></i>
+                        <i class="bi bi-linkedin"></i>
                     </div>
-                    <p class="small">&copy; 2026 | Projeto Educacional para Portfólio.</p>
                 </div>
             </div>
         </div>
